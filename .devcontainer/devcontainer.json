@@ -1,0 +1,20 @@
+{
+  "name": "Agent Workspace",
+  "image": "://microsoft.com",
+  
+  // Automatically install 'uv' and set up a virtual environment upon creation
+  "postCreateCommand": "curl -LsSf https://astral.sh | sh && uv venv",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        "python.experimental.features": true
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
+}
