@@ -1,0 +1,574 @@
+/**
+ * ==============================================================================
+ * 📦 EIGENSCRIBE SIGNATURE BOILERPLATE STYLESHEET
+ * ==============================================================================
+ * Project: The Scriber Experience / Scriber Labs
+ * Purpose: Unified high-contrast, glassmorphic, ADHD-structured styling boilerplate
+ * Author: Eigenscribe
+ * Version: 1.0.0
+ *
+ * ------------------------------------------------------------------------------
+ * Architectural Flow:
+ * 0️⃣ What Exists              -> Layer 1: CSS Custom Properties & Design Tokens
+ * 1️⃣ What You're Allowed to Call -> Layer 2: Base Element Resets & Typography
+ * 2️⃣ How It Works             -> Layer 3: Layout Scaffolding & Responsive Grids
+ * 3️⃣ Proof It Works           -> Layer 4: Core Reusable UI Component Classes
+ * ==============================================================================
+ */
+
+/* External Typography Imports */
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Fira+Code:wght@300;400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+/* ==============================================================================
+ * 0️⃣ WHAT EXISTS: LAYER 1 — CSS CUSTOM PROPERTIES & DESIGN TOKENS
+ * ============================================================================== */
+
+:root {
+  /* ----------------------------------------------------------------------------
+   * 🎨 Surface & Background Foundations (Dark Mode First)
+   * ---------------------------------------------------------------------------- */
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-elevated: #21262d;
+  --color-surface-overlay: rgba(22, 27, 34, 0.75);
+
+  /* ----------------------------------------------------------------------------
+   * 🔤 Typography & Content Colors
+   * ---------------------------------------------------------------------------- */
+  --color-text: #f0f6fc;
+  --color-text-bright: #ffffff;
+  --color-text-muted: #8b949e;
+  --color-text-subtle: #6e7681;
+  --color-text-accent: #c5f8ff;
+
+  /* ----------------------------------------------------------------------------
+   * 🌈 ADHD High-Contrast Semantic Palette & Variable Coding System
+   * ---------------------------------------------------------------------------- */
+  /* Primary: Interactive Cyan / Electric Blue */
+  --color-primary-light: #00e8ff;
+  --color-primary: #14b5ff;
+  --color-primary-dark: #0070eb;
+  --color-primary-glow: rgba(20, 181, 255, 0.35);
+
+  /* Secondary: Deep Violet / Cosmic Purple */
+  --color-secondary-light: #c4b5fd;
+  --color-secondary: #9b7dff;
+  --color-secondary-dark: #7952f5;
+  --color-secondary-glow: rgba(121, 82, 245, 0.35);
+
+  /* Tertiary: Neon Emerald Green (STEM / Tech / Success / Constants) */
+  --color-tertiary-light: #22f792;
+  --color-tertiary: #10b981;
+  --color-tertiary-dark: #059669;
+  --color-tertiary-glow: rgba(34, 247, 146, 0.35);
+
+  /* Quaternary: Amber / Coral Orange (Attention / Dynamics / Warnings) */
+  --color-quaternary-light: #fef08a;
+  --color-quaternary: #f78166;
+  --color-quaternary-dark: #ea580c;
+  --color-quaternary-glow: rgba(247, 129, 102, 0.35);
+
+  /* Pernary: Hot Pink / Magenta (Special Modes / Accents) */
+  --color-pernary-light: #f472b6;
+  --color-pernary: #ec4899;
+  --color-pernary-dark: #be185d;
+  --color-pernary-glow: rgba(236, 72, 153, 0.35);
+
+  /* Math Equation & Science Highlight */
+  --color-math: #00f5db;
+
+  /* ----------------------------------------------------------------------------
+   * 🔮 Signature Vibrant Multi-Stop Gradients
+   * ---------------------------------------------------------------------------- */
+  --gradient-eigenscribe: linear-gradient(135deg, #00f2ff, #10b981, #3b82f6);
+  --gradient-multi: linear-gradient(135deg, #00f2ff, #3b82f6, #8b5cf6, #ec4899);
+  --gradient-cyan-to-blue: linear-gradient(130deg, #00ffee, #0a95eb);
+  --gradient-blue-to-purple: linear-gradient(to right bottom, #00e8ff, #14b5ff, #5280ff, #7952f5);
+  --gradient-green-to-blue: linear-gradient(135deg, #22f792, #27aaff);
+  --gradient-producer: linear-gradient(135deg, #f472b6, #8b5cf6, #3b82f6);
+  --gradient-producer-green: linear-gradient(135deg, #4ade80, #06b6d4, #3b82f6);
+  --gradient-blue: linear-gradient(to right bottom, #00c8ff, #14a5ff, #7066ff, #5e17eb);
+
+  /* Transparent overlay gradients */
+  --gradient-blue-purple-glass: linear-gradient(135deg, rgba(0, 232, 255, 0.15), rgba(20, 181, 255, 0.1), rgba(121, 82, 245, 0.15));
+
+  /* ----------------------------------------------------------------------------
+   * 🪟 Glassmorphism & Depth Specs
+   * ---------------------------------------------------------------------------- */
+  --glass-bg: rgba(0, 0, 0, 0.5);
+  --glass-bg-elevated: rgba(22, 27, 34, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-bright: rgba(20, 181, 255, 0.3);
+  --glass-blur: blur(12px);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --shadow-glow-cyan: 0 0 20px rgba(0, 232, 255, 0.3);
+  --shadow-glow-purple: 0 0 20px rgba(121, 82, 245, 0.3);
+  --shadow-button: 0 4px 15px rgba(20, 181, 255, 0.4);
+  --shadow-button-2: 0 4px 15px rgba(16, 185, 129, 0.4);
+  --shadow-text: 0 2px 4px rgba(0, 0, 0, 0.6);
+
+  /* ----------------------------------------------------------------------------
+   * 🖋️ Typography Families
+   * ---------------------------------------------------------------------------- */
+  --font-heading: 'Aclonica', sans-serif;
+  --font-body: 'Merriweather', Georgia, serif;
+  --font-mono: 'Fira Code', monospace;
+  --font-math: "Times New Roman", "Computer Modern", serif;
+
+  /* ----------------------------------------------------------------------------
+   * 📐 Golden Ratio & Metric Scale Tokens (φ ≈ 1.618)
+   * ---------------------------------------------------------------------------- */
+  --space-2xs: 0.236rem;
+  --space-xs: 0.382rem;
+  --space-sm: 0.618rem;
+  --space-md: 1.000rem;
+  --space-lg: 1.618rem;
+  --space-xl: 2.618rem;
+  --space-2xl: 4.236rem;
+  --space-3xl: 6.854rem;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* ==============================================================================
+ * 1️⃣ WHAT YOU'RE ALLOWED TO CALL: LAYER 2 — BASE ELEMENT RESETS & NORMALIZATION
+ * ============================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--space-md);
+  line-height: 1.618;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-bright);
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: calc(1rem * 1.618 * 1.618); }
+h2 { font-size: calc(1rem * 1.618 * 1.3); }
+h3 { font-size: calc(1rem * 1.618); }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1.0rem; }
+
+/* Paragraphs & Text */
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+  text-shadow: 0 0 8px var(--color-primary-glow);
+}
+
+/* Code & Preformatted Text */
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Focus Visibility Ring */
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Images & Media */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Custom Selection */
+::selection {
+  background: rgba(20, 181, 255, 0.35);
+  color: var(--color-text-bright);
+}
+
+/* ==============================================================================
+ * 2️⃣ HOW IT WORKS: LAYER 3 — LAYOUT SCAFFOLDING & RESPONSIVE GRIDS
+ * ============================================================================== */
+
+/* Container Bounds */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.max-w-3xl { max-width: 48rem; }
+.max-w-5xl { max-width: 64rem; }
+.max-w-7xl { max-width: 80rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.min-h-screen { min-height: 100vh; }
+
+/* Flexbox Layout Utilities */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.flex-1 { flex: 1 1 0%; }
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* Grid Layout Utilities */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Golden Ratio Split Layout */
+.layout-golden {
+  display: grid;
+  grid-template-columns: 1.618fr 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .layout-golden {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================================================================
+ * 3️⃣ PROOF IT WORKS: LAYER 4 — CORE REUSABLE UI COMPONENT CLASSES
+ * ============================================================================== */
+
+/* ------------------------------------------------------------------------------
+ * 🪟 Glassmorphic Cards & Panels
+ * ------------------------------------------------------------------------------ */
+.card,
+.card-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: var(--glass-border-bright);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-cyan);
+}
+
+.card-header {
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: var(--space-sm);
+}
+
+/* ------------------------------------------------------------------------------
+ * 🔘 Sleek Buttons & Micro-Interactions
+ * ------------------------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-text-bright);
+  text-shadow: var(--shadow-text);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), filter var(--transition-normal), background-position var(--transition-normal);
+  background-size: 200% 100%;
+  position: relative;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Button Variants */
+.btn-primary {
+  background-image: var(--gradient-cyan-to-blue);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 6px 20px var(--color-primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-image: var(--gradient-blue-to-purple);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-secondary:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 6px 20px var(--color-secondary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-eigenscribe {
+  background-image: var(--gradient-eigenscribe);
+  box-shadow: var(--shadow-button-2);
+}
+
+.btn-eigenscribe:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 6px 20px var(--color-tertiary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-glass {
+  background: var(--glass-bg-elevated);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-glass:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow-cyan);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------------------
+ * 🌈 Vibrant Text Gradients & Shimmer Keyframes
+ * ------------------------------------------------------------------------------ */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-multi {
+  background: var(--gradient-multi);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-animated {
+  background: var(--gradient-multi);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 6s ease infinite;
+  display: inline-block;
+  text-shadow: 0 0 20px var(--color-primary-glow);
+}
+
+/* ------------------------------------------------------------------------------
+ * 🏷️ High-Contrast ADHD Semantic Badges & Tags
+ * ------------------------------------------------------------------------------ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2xs) var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.badge-primary {
+  background: rgba(20, 181, 255, 0.15);
+  color: var(--color-primary-light);
+  border-color: rgba(20, 181, 255, 0.4);
+}
+
+.badge-secondary {
+  background: rgba(155, 125, 255, 0.15);
+  color: var(--color-secondary-light);
+  border-color: rgba(155, 125, 255, 0.4);
+}
+
+.badge-success {
+  background: rgba(34, 247, 146, 0.15);
+  color: var(--color-tertiary-light);
+  border-color: rgba(34, 247, 146, 0.4);
+}
+
+.badge-warning {
+  background: rgba(247, 129, 102, 0.15);
+  color: var(--color-quaternary);
+  border-color: rgba(247, 129, 102, 0.4);
+}
+
+.badge-accent {
+  background: rgba(236, 72, 153, 0.15);
+  color: var(--color-pernary-light);
+  border-color: rgba(236, 72, 153, 0.4);
+}
+
+/* ------------------------------------------------------------------------------
+ * 💻 Code Blocks & Syntax Display
+ * ------------------------------------------------------------------------------ */
+.code-block {
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #c9d1d9;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.code-inline {
+  background: rgba(20, 181, 255, 0.1);
+  color: var(--color-primary-light);
+  border: 1px solid rgba(20, 181, 255, 0.2);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+/* ------------------------------------------------------------------------------
+ * 📝 Inputs & Form Controls
+ * ------------------------------------------------------------------------------ */
+.input,
+.textarea,
+.select {
+  width: 100%;
+  background: var(--glass-bg-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-text-bright);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  backdrop-filter: var(--glass-blur);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+/* ------------------------------------------------------------------------------
+ * 🧭 Glassmorphic Navigation Bar
+ * ------------------------------------------------------------------------------ */
+.navbar-glass {
+  background: rgba(13, 17, 23, 0.75);
+  border-bottom: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-sm) var(--space-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+/* ------------------------------------------------------------------------------
+ * 📊 Mermaid & Data App Scaffolding
+ * ------------------------------------------------------------------------------ */
+.mermaid-wrapper {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
