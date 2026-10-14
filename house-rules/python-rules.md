@@ -143,3 +143,15 @@ Date:
 >    - Use `uv` as the virtual environment and package management tool.
 >    - Keep `pyproject.toml` updated with dependencies, tools, and project metadata.
 >    - If `pyproject.toml` does not exist in a project/repository, create one tailored to the needs and requirements of the project.
+>    - Distinguish between application/template repositories (`[tool.uv] package = false`) and installable libraries (`[tool.uv] package = true` with standard `[build-system]` using `hatchling` and `src/<package_name>/` layout).
+
+### 🔄 End-of-Run File Consistency & State Synchronization
+>14. Maintain holistic multi-file consistency across all project assets
+>    - Every file must be updated appropriately relative to any files created, altered, or refactored during a given run.
+>    - At the end of every generation pass or development session, perform a complete consistency audit:
+>      - **`README.md` & Documentation**: Must reflect newly added modules, architectures, scripts, CLI parameters, or setup procedures.
+>      - **`pyproject.toml` & Dependencies**: Must list all new runtime or development libraries introduced by new code; version pins must match runtime engine constraints.
+>      - **`__init__.py` & `__all__`**: Must expose any new public interfaces and prune removed ones.
+>      - **Tests & Smoke Suites**: Must test newly introduced functionality and be 100% green before submitting.
+>      - **House Rules & Guidelines**: Must remain synchronized with real codebase patterns and referenced correctly.
+>    - Never leave stale, orphan, conflicting, or contradictory documentation or code behind at the end of a run.

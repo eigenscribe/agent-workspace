@@ -106,3 +106,6 @@ When styling web pages, apps, data dashboards, or CLI outputs, adhere to `../hou
    - What the figures, derivations, and results genuinely demonstrate.
    - What remains speculative, deferred, or unfinished.
    - Where the underlying mathematical reasoning and derivations live.
+5. **End-of-Run File Consistency & Hygiene**:
+   - Every file must be updated appropriately relative to files created or modified by the agent during a given run.
+   - At the conclusion of any session, perform an explicit consistency audit ensuring that all documentation (`README.md`, setup guides), configuration files (`pyproject.toml`, `.gitignore`), tests, and source codes are completely clean, synchronized, and mutually consistent.

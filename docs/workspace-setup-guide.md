@@ -20,9 +20,11 @@ agent-workspace (Canonical Single Source of Truth)
     └── workspace-setup-guide.md
 
        │
-       ├──► [Workflow 1: Git Submodule]  ──► Existing Projects (.agent-workspace/)
+       ├──► [Workflow 1: Git Submodule]       ──► Existing Projects (.agent-workspace/)
        │
-       └──► [Workflow 2: Template Repo]  ──► Green-field Repositories
+       ├──► [Workflow 2: Template Repo]       ──► Green-field Repositories
+       │
+       └──► [Workflow 3: Installable Package] ──► Python Libraries (src/ layout + uv)
 ```
 
 ---
@@ -81,6 +83,85 @@ In GitHub / GitLab repository settings for `agent-workspace`:
 1. Create a new repository using `agent-workspace` as the template base.
 2. Clone locally and verify directory layout.
 3. The newly generated project retains the canonical structure (`house-rules/`, `boilerplates/`, `.junie/AGENTS.md`).
+
+---
+
+## 📦 Workflow 3: Setting Up as an Installable Python Package
+
+When creating or transforming a consumer repository into an installable, distributable Python package:
+
+### 1️⃣ Step 1: Establish Standard `src/` Layout
+Structure the target repository cleanly:
+
+```text
+my-project/
+├── .agent-workspace/           # Linked rules & templates (Submodule)
+├── .junie/
+│   └── AGENTS.md               # Guidelines bridge
+├── src/
+│   └── my_package/
+│       ├── __init__.py         # Explicit __all__ exports
+│       └── core.py             # Math / logic implementation
+├── tests/
+│   └── test_core.py            # Automated tests
+├── pyproject.toml              # Build & dependency configuration
+└── README.md                   # Onboarding & architecture overview
+```
+
+### 2️⃣ Step 2: Configure `pyproject.toml`
+Set up the build backend and uv package flag:
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my-package"
+version = "0.1.0"
+description = "Deterministic scientific module adhering to Scriber Labs standards."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0.0",
+    "scipy>=1.11.0",
+    "matplotlib>=3.8.0",
+]
+
+[tool.uv]
+managed = true
+package = true
+
+[tool.uv.pip]
+universal = true
+```
+
+### 3️⃣ Step 3: Sync & Install in Editable Mode
+Run:
+
+```bash
+uv sync
+```
+or install directly into current environment:
+```bash
+uv pip install -e .
+```
+
+---
+
+## 🔄 End-of-Run File Consistency Protocol
+
+Every autonomous agent run or development cycle must conclude with a mandatory consistency audit to ensure source code cleanliness and zero drift:
+
+1. **Relative File Synchronization**:
+   - Every file must be updated appropriately relative to new files created during a given run.
+   - If a new module or script is created, ensure `README.md`, setup guides, `pyproject.toml` dependencies, and package `__all__` exports reflect it.
+2. **Mutual Consistency Verification**:
+   - `pyproject.toml` dependencies ⟷ imports in source code.
+   - `README.md` examples ⟷ executable public API functions.
+   - Tests ⟷ actual implementation behavior.
+3. **No Orphan Artifacts**:
+   - Remove temporary scratchpads, stale comments, broken imports, or outdated configurations before ending any session.
 
 ---
 
