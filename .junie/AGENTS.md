@@ -6,14 +6,14 @@ Welcome to the canonical workspace baseline for autonomous development agents ac
 
 ## 📁 0. Canonical Workspace Reference Files
 
-Agents must consult and adhere to the source reference specifications and gold standard templates located in `rules/` and `boilerplate/`:
+Agents must consult and adhere to the source reference specifications and gold standard templates located in `../house-rules` and `../boilerplates`:
 
 | Directory | File | Purpose & Contents |
 | :--- | :--- | :--- |
-| `rules/` | `rules/python-rules.md` | Core rules for Python development: mathematical typography, modern RNG, typing, package hygiene, docstrings, and script flow. |
-| `rules/` | `rules/css-rules.md` | The Scriber Experience design system: 4-layer token hierarchy, glassmorphism baseline, ADHD semantic color coding, and golden ratio spacing. |
-| `boilerplate/` | `boilerplate/boilerplate.py` | Gold standard reference script template implementing mathematical simulation, explicit type annotations, shape assertions, deterministic RNG, and smoke testing. |
-| `boilerplate/` | `boilerplate/boilerplate.css` | Gold standard reference stylesheet implementing the full 4-layer taxonomy, CSS tokens, glassmorphism components, gradients, and responsive layouts. |
+| `../house-rules` | `../house-rules/python-rules.md` | Core rules for Python development: mathematical typography, modern RNG, typing, package hygiene, docstrings, and script flow. |
+| `../house-rules` | `../house-rules/css-rules.md` | The Scriber Experience design system: 4-layer token hierarchy, glassmorphism baseline, ADHD semantic color coding, and golden ratio spacing. |
+| `../boilerplates` | `../boilerplates/gold-standard-boilerplate.py` | Gold standard reference script template implementing mathematical simulation, explicit type annotations, shape assertions, deterministic RNG, and smoke testing. |
+| `../boilerplates` | `../boilerplates/tse-boilerplate.css` | Gold standard reference stylesheet implementing the full 4-layer taxonomy, CSS tokens, glassmorphism components, gradients, and responsive layouts. |
 
 ---
 
@@ -43,7 +43,7 @@ Use explicit number-emoji section headers as semantic anchors (not mere decorati
 
 ## 🐍 2. Python Engineering & Mathematical Rigor
 
-When writing or modifying Python modules, follow the rules defined in `rules/python-rules.md` and reference `boilerplate/boilerplate.py`:
+When writing or modifying Python modules, follow the rules defined in `../house-rules/python-rules.md` and reference `../boilerplates/gold-standard-boilerplate.py`:
 
 1. **Modern Deterministic RNG**:
    - Always use `np.random.default_rng(seed)`.
@@ -70,7 +70,7 @@ When writing or modifying Python modules, follow the rules defined in `rules/pyt
 
 ## 🎨 3. CSS, Design System & Cognitive Load Architecture
 
-When styling web pages, apps, data dashboards, or CLI outputs, adhere to `rules/css-rules.md` and `boilerplate/boilerplate.css`:
+When styling web pages, apps, data dashboards, or CLI outputs, adhere to `../house-rules/css-rules.md` and `../boilerplates/tse-boilerplate.css`:
 
 1. **The Scriber Glassmorphism Baseline**:
    - Dark mode first (`--color-bg: #0d1117`, `--color-surface: #161b22`, `--color-surface-elevated: #21262d`).

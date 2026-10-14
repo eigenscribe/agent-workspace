@@ -7,12 +7,14 @@ Welcome to the canonical environment index for autonomous development agents. Th
 ```text
 ├── .devcontainer/
 │   └── devcontainer.json      # Virtual environment configuration container
-├── rules/
+├── docs/
+│   └── workspace-setup-guide.md # Multi-project distribution & setup guide (Submodules / Templates)
+├── house-rules/
 │   ├── python-rules.md        # Mathematical typography & execution constraint scopes
 │   └── css-rules.md           # Glassmorphic visual layout layering standards
-├── boilerplate/
-│   ├── boilerplate.py         # Gold standard numeric integration script template
-│   └── boilerplate.css        # Eigenscribe signature high-contrast layout blueprint
+├── boilerplates/
+│   ├── gold-standard-boilerplate.py  # Gold standard numeric integration script template
+│   └── tse-boilerplate.css          # Eigenscribe signature high-contrast layout blueprint
 ├── pyproject.toml             # uv environment dependencies and locks
 └── README.md                  # Master onboarding index (This file)
 ```
@@ -27,8 +29,8 @@ Welcome to the canonical environment index for autonomous development agents. Th
 
 Before executing any generation loop, training pass, or asset construction, agents must ingest and strictly conform to the sub-system specifications:
 
-1. **Python Rules (`/rules/python-rules.md`)**: Forces explicit LaTeX/text derivations, checks array dimensionality boundaries to eliminate silent broadcasting traps, and binds modern `np.random.default_rng()` constraints for zero hidden execution states.
-2. **CSS Rules (`/rules/css-rules.md`)**: Dictates strict, predictable flex/grid container scaffolds using the Eigenscribe high-contrast token spectrum. Flashy, non-standard layout anomalies are strictly prohibited.
+1. **Python Rules (`/house-rules/python-rules.md`)**: Forces explicit LaTeX/text derivations, checks array dimensionality boundaries to eliminate silent broadcasting traps, and binds modern `np.random.default_rng()` constraints for zero hidden execution states.
+2. **CSS Rules (`/house-rules/css-rules.md`)**: Dictates strict, predictable flex/grid container scaffolds using the Eigenscribe high-contrast token spectrum. Flashy, non-standard layout anomalies are strictly prohibited.
 
 For each repository, establish:
 

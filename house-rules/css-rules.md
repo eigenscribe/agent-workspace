@@ -88,11 +88,11 @@ Following the Eigenscribe architectural standard (*"What exists → what you're 
 
 ## 🌐 Cross-Context Utility Mapping
 
-The tokens and rules in `eigenscribe-boilerplate.css` map directly across diverse application targets:
+The tokens and rules in `tse-boilerplate.css` map directly across diverse application targets:
 
 | Context | Implementation Strategy | Key Tokens / Classes |
 | :--- | :--- | :--- |
-| **Web Portfolios & Landing Pages** | Direct inclusion of `eigenscribe-boilerplate.css`. Glassmorphic navbars, cards, and animated text headers. | `.navbar-glass`, `.hero-title`, `.btn-eigenscribe`, `.card-glass` |
+| **Web Portfolios & Landing Pages** | Direct inclusion of `tse-boilerplate.css`. Glassmorphic navbars, cards, and animated text headers. | `.navbar-glass`, `.hero-title`, `.btn-eigenscribe`, `.card-glass` |
 | **Data Apps (Dash / Streamlit)** | Inject custom CSS or map tokens to `config.toml` (Streamlit) or `assets/style.css` (Dash). | `--color-bg`, `--color-surface`, `--color-primary`, `.dash-graph-container` |
 | **Mermaid Diagrams** | Configure theme variables in Mermaid initialization (`theme: 'base'`, `themeVariables`). | `primaryColor: #14b5ff`, `primaryTextColor: #ffffff`, `lineColor: #00e8ff` |
 | **Python Matplotlib / Pyplot** | Apply the companion Pyplot stylesheet / `rcParam` dictionary reflecting the eigenscribe color cycle. | `axes.facecolor: '#161b22'`, `figure.facecolor: '#0d1117'`, `axes.prop_cycle: ['#14b5ff', '#9b7dff', '#22f792', '#f78166']` |

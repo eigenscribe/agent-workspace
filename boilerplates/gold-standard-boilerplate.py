@@ -1,5 +1,5 @@
 """
-boilerplate.py
+gold-standard-boilerplate.py
 
 Gold Standard script template for scientific computing, theoretical modeling,
 and physical system simulations.
@@ -8,9 +8,9 @@ Author: Scriber Labs
 Date: 2026-10-13
 """
 
-from typing import Final, Protocol, TypeAlias
 import numpy as np
 from numpy.typing import NDArray
+from typing import Final, Protocol, TypeAlias
 
 # Define typing aliases for clear mathematical intent
 ArrayOrFloat: TypeAlias = float | NDArray[np.float64]
