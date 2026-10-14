@@ -1,4 +1,4 @@
-# 🔬 Scriber Labs: Agent Workspace Index
+# 🧿 Scriber Labs: Agent Workspace Index
 
 Welcome to the canonical environment index for autonomous development agents. This workspace enforces strict structural layout layering, deterministic mathematical simulation profiling, uncompromising code verification rules, and automated workspace consistency.
 
