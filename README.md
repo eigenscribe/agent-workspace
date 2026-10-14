@@ -12,7 +12,8 @@ Welcome to the canonical environment index for autonomous development agents. Th
 │   └── css-rules.md           # Glassmorphic visual layout layering standards
 ├── boilerplates/
 │   ├── gold-standard-boilerplate.py  # Gold standard numeric integration script template
-│   └── tse-boilerplate.css          # Eigenscribe signature high-contrast layout blueprint
+│   ├── tse-boilerplate.css          # Eigenscribe signature high-contrast layout blueprint
+│   └── visuals-boilerplate.ipynb    # Visualizations, NetworkX topologies & color palettes template
 ├── .junie/
 │   └── AGENTS.md              # Canonical agent guidelines & workspace directives
 ├── pyproject.toml             # uv environment dependencies and locks
