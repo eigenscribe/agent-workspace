@@ -80,10 +80,9 @@
   /* ----------------------------------------------------------------------------
    * 🔮 Signature Vibrant Multi-Stop Gradients
    * ---------------------------------------------------------------------------- */
-  --gradient-eigenscribe: linear-gradient(135deg, #00f2ff, #10b981, #3b82f6);
+  --gradient-eigenscribe: linear-gradient(to right bottom, #00e8ff, #14b5ff, #5280ff, #7952f5);
   --gradient-multi: linear-gradient(135deg, #00f2ff, #3b82f6, #8b5cf6, #ec4899);
   --gradient-cyan-to-blue: linear-gradient(130deg, #00ffee, #0a95eb);
-  --gradient-blue-to-purple: linear-gradient(to right bottom, #00e8ff, #14b5ff, #5280ff, #7952f5);
   --gradient-green-to-blue: linear-gradient(135deg, #22f792, #27aaff);
   --gradient-producer: linear-gradient(135deg, #f472b6, #8b5cf6, #3b82f6);
   --gradient-producer-green: linear-gradient(135deg, #4ade80, #06b6d4, #3b82f6);
