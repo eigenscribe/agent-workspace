@@ -15,7 +15,8 @@ agent-workspace (Canonical Single Source of Truth)
 │   └── css-rules.md
 ├── boilerplates/
 │   ├── gold-standard-boilerplate.py
-│   └── tse-boilerplate.css
+│   ├── tse-boilerplate.css
+│   └── visuals-boilerplate.ipynb
 └── docs/
     └── workspace-setup-guide.md
 
@@ -54,6 +55,7 @@ Agents must consult the linked rules and templates in `.agent-workspace`:
 - **CSS / UI System**: `.agent-workspace/house-rules/css-rules.md`
 - **Python Numeric Template**: `.agent-workspace/boilerplates/gold-standard-boilerplate.py`
 - **CSS Design System Template**: `.agent-workspace/boilerplates/tse-boilerplate.css`
+- **Visuals & Graphs Template**: `.agent-workspace/boilerplates/visuals-boilerplate.ipynb`
 
 ## 🎯 Project-Specific Context & Overrides
 - Target domain and operational requirements for this repository.

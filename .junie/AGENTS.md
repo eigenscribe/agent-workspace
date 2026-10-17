@@ -14,6 +14,7 @@ Agents must consult and adhere to the source reference specifications and gold s
 | `../house-rules` | `../house-rules/css-rules.md` | The Scriber Experience design system: 4-layer token hierarchy, glassmorphism baseline, ADHD semantic color coding, and golden ratio spacing. |
 | `../boilerplates` | `../boilerplates/gold-standard-boilerplate.py` | Gold standard reference script template implementing mathematical simulation, explicit type annotations, shape assertions, deterministic RNG, and smoke testing. |
 | `../boilerplates` | `../boilerplates/tse-boilerplate.css` | Gold standard reference stylesheet implementing the full 4-layer taxonomy, CSS tokens, glassmorphism components, gradients, and responsive layouts. |
+| `../boilerplates` | `../boilerplates/visuals-boilerplate.ipynb` | Gold standard reference notebook template for scientific visualization, NetworkX graph topologies, dashboards, and design token / colormap palettes. |
 
 ---
 
